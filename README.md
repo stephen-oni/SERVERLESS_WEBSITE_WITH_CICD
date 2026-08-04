@@ -15,8 +15,6 @@ A production-ready, fully automated Infrastructure as Code (IaC) and CI/CD deplo
 
 
 
-```
-
 ### Key Technical Features
 
 * **Stateless & Highly Available Architecture:** Serves static web assets (`index.html`, CSS, images) via Amazon S3 backed by CloudFront edge locations worldwide.
