@@ -1,38 +1,26 @@
-# Serverless Resume CI/CD Pipeline (`serverless-resume-cicd`)
+# Serverless Resume CI/CD Pipeline build
 
 [![AWS S3](https://img.shields.io/badge/AWS-S3-orange?logo=amazons3&logoColor=white)](https://aws.amazon.com/s3/)
 [![AWS CloudFront](https://img.shields.io/badge/AWS-CloudFront-blue?logo=amazon-aws&logoColor=white)](https://aws.amazon.com/cloudfront/)
 [![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-CI%2FCD-2088FF?logo=githubactions&logoColor=white)](https://github.com/features/actions)
 [![Infrastructure as Code](https://img.shields.io/badge/IaC-Automation-green)](https://aws.amazon.com/)
 
-A production-ready, fully automated Infrastructure as Code (IaC) and CI/CD deployment pipeline for hosting a high-availability, low-latency cloud resume on **AWS S3** and **Amazon CloudFront**. Built using **GitHub Actions**, this repository demonstrates automated deployment workflows, cache invalidation, static asset hosting, and cloud security best practices.
+A production site which is fully automated using Infrastructure as Code (IaC) and CI/CD deployment pipeline for hosting a high-availability, low-latency cloud resume on **AWS S3** and **Amazon CloudFront** and **Route S5** . Built using **GitHub Actions pipeline**, this repository demonstrates automated deployment workflows, cache invalidation, static asset hosting, and cloud security best practices.
 
 ---
 
 
-## 🏗️ Architecture Overview
+## 🏗️ Architecture Overview (PLAN)
 ![Architecture Diagram](asset/architecture.png)
 
 
+### Technical Features
 
-### Key Technical Features
-
-* **Stateless & Highly Available Architecture:** Serves static web assets (`index.html`, CSS, images) via Amazon S3 backed by CloudFront edge locations worldwide.
-* **Automated Deployment Pipeline:** GitHub Actions automatically triggers on pushes to the `main` branch, syncing local changes to the AWS S3 bucket.
+* **Stateless & Highly Available Architecture:** Serves static web assets via Amazon S3 backed by CloudFront edge locations worldwide and DNS.
+* **Automated Deployment Pipeline:** GitHub Actions automatically triggers on pushes to the `any` branch, syncing local changes to the AWS S3 bucket.
 * **Global Low-Latency CDN:** Integrated Amazon CloudFront CDN with automated edge cache invalidation (`/*`) ensuring updates propagate globally in real time.
 * **Secure Credential Handling:** Enforces principle of least-privilege using AWS IAM programmatic access keys managed securely via GitHub Encrypted Secrets.
-* **Optimized & ATS-Compliant HTML/CSS:** Clean, responsive, dark-mode-ready UI structured for Applicant Tracking System (ATS) parsing.
 
----
-
-## 🛠️ Tech Stack & Keywords
-
-* **Cloud Infrastructure:** AWS S3, Amazon CloudFront, AWS IAM, AWS CLI
-* **DevOps & CI/CD:** GitHub Actions, Git, Shell / Bash Scripting
-* **Languages & Web Standards:** HTML5, CSS3, JavaScript, Markdown
-* **Systems Administration:** Linux (Ubuntu), SSH / Key Authentication
-
----
 
 ## 📁 Repo Structure
 
@@ -42,7 +30,7 @@ serverless-resume-cicd/
 │   └── workflows/
 │       └── deploy.yml        # GitHub Actions CI/CD workflow configuration
 ├── .gitignore                # System and personal file exclusions
-├── index.html                # ATS-optimized Cloud & DevOps Engineer resume
+├── index.html                # your resume
 └── README.md                 # Project documentation
 
 ```
@@ -54,8 +42,7 @@ serverless-resume-cicd/
 ### Prerequisites
 
 1. An active **AWS Account** with access to S3 and CloudFront.
-2. An **AWS IAM User** with programmatic access keys (`s3:Sync`, `cloudfront:CreateInvalidation`).
-3. A **GitHub Account** and a configured local **Linux / Terminal environment**.
+2. An **AWS IAM User** with s3 and CDN previledges.
 
 ### Setup Instructions
 
@@ -68,7 +55,7 @@ cd serverless-resume-cicd
 
 
 2. **Add Personal Profile Image:**
-Add your professional profile headshot to the root directory and name it `profile.jpg` (Note: `profile.jpg` is ignored by `.gitignore` to prevent tracking personal images).
+Add your professional profile headshot to the root directory and name it `profile.jpg` (Note: `profile.jpg` is ignored by `.gitignore` to prevent tracking personal images) you have to remove the profile ignore section and push to a private.
 
 3. **Configure GitHub Repository Secrets:**
 Navigate to **Settings > Secrets and variables > Actions** in your GitHub repository and add:
@@ -108,7 +95,6 @@ git push -u origin main
 *Cloud Infrastructure & DevOps Engineer*
 
 * **Portfolio:** [stephenoni.mytunnel.org](https://www.google.com/search?q=http://stephenoni.mytunnel.org)
-* **GitHub:** [@stephen-oni](https://www.google.com/search?q=https://github.com/stephen-oni)
 * **LinkedIn:** [stephen-omololu](https://www.google.com/search?q=http://linkedin.com/in/stephen-omololu)
 
 ---
