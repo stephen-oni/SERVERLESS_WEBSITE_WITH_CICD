@@ -1,0 +1,27 @@
+# Personal Profile
+profile.jpg
+profile.png
+profile.jpeg
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+#directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Temporary & Build files
+*.bak
+*.tmp
