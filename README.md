@@ -13,6 +13,7 @@ A production site which is fully automated using Infrastructure as Code (IaC) an
 ## 🏗️ Architecture Overview (PLAN)
 ![Architecture Diagram](asset/architecture.png)
 
+---
 
 ### Technical Features
 
@@ -30,14 +31,14 @@ serverless-resume-cicd/
 │   └── workflows/
 │       └── deploy.yml        # GitHub Actions CI/CD workflow configuration
 ├── .gitignore                # System and personal file exclusions
-├── index.html                # your resume
+├── index.html                # your resume code here
 └── README.md                 # Project documentation
 
 ```
 
 ---
 
-## HOW TO USE 
+## STEP BY STEP PROCESS. 
 
 ### Prerequisites
 
