@@ -9,24 +9,11 @@ A production-ready, fully automated Infrastructure as Code (IaC) and CI/CD deplo
 
 ---
 
-![Architecture Diagram](asset/architecture.png)
 
 ## 🏗️ Architecture Overview
+![Architecture Diagram](asset/architecture.png)
 
-```text
-[ Developer Push (main) ]
-         │
-         ▼
-[ GitHub Actions CI/CD Pipeline ]
-         │
-         ├─► [ AWS CLI Auth (IAM Roles / Secrets) ]
-         │
-         ├─► [ S3 Bucket Sync (Static Web Assets) ]
-         │
-         └─► [ CloudFront Invalidation (Global Cache Update) ]
-         │
-         ▼
-[ End User / Recruiter Access via HTTPS ]
+
 
 ```
 
