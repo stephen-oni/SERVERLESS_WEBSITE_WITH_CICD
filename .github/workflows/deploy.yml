@@ -1,5 +1,5 @@
 # .github/workflows/deploy.yml
-name: Serverless Resume CI/CD Pipeline
+name: Serverless website Pipeline
 
 on:
   push:
