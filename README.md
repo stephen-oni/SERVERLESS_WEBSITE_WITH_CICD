@@ -1,91 +1,88 @@
-# Serverless Resume CI/CD Pipeline build
+```markdown
+# Serverless Static Website CI/CD Pipeline
 
 [![AWS S3](https://img.shields.io/badge/AWS-S3-orange?logo=amazons3&logoColor=white)](https://aws.amazon.com/s3/)
 [![AWS CloudFront](https://img.shields.io/badge/AWS-CloudFront-blue?logo=amazon-aws&logoColor=white)](https://aws.amazon.com/cloudfront/)
 [![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-CI%2FCD-2088FF?logo=githubactions&logoColor=white)](https://github.com/features/actions)
-[![Infrastructure as Code](https://img.shields.io/badge/IaC-Automation-green)](https://aws.amazon.com/)
+[![Infrastructure as Code](https://img.shields.io/badge/IaC-Automation-green)](https://www.terraform.io/)
 
-A production site which is fully automated using Infrastructure as Code (IaC) and CI/CD deployment pipeline for hosting a high-availability, low-latency cloud resume on **AWS S3** and **Amazon CloudFront** and **Route S5** . Built using **GitHub Actions pipeline**, this repository demonstrates automated deployment workflows, cache invalidation, static asset hosting, and cloud security best practices.
+A production-ready, fully automated serverless hosting platform built using **Infrastructure as Code (IaC)** with HCP Terraform and a continuous deployment pipeline via **GitHub Actions**. Static websites are hosted securely on **Amazon S3** and delivered globally via **Amazon CloudFront** using Origin Access Control (OAC).
 
 ---
 
-
-## 🏗️ Architecture Overview (PLAN)
+## 🏗️ Architecture Overview
 ![Architecture Diagram](asset/architecture.png)
 
 ---
 
 ### Technical Features
 
-* **Stateless & Highly Available Architecture:** Serves static web assets via Amazon S3 backed by CloudFront edge locations worldwide and DNS.
-* **Automated Deployment Pipeline:** GitHub Actions automatically triggers on pushes to the `any` branch, syncing local changes to the AWS S3 bucket.
-* **Global Low-Latency CDN:** Integrated Amazon CloudFront CDN with automated edge cache invalidation (`/*`) ensuring updates propagate globally in real time.
-* **Secure Credential Handling:** Enforces principle of least-privilege using AWS IAM programmatic access keys managed securely via GitHub Encrypted Secrets.
+* **Secure OAC Architecture:** Enforces strict public access blocks on S3; all traffic routes securely through CloudFront using Origin Access Control (OAC).
+* **Automated IaC & CI/CD:** Provisions and manages infrastructure via Terraform cloud workspaces, paired with GitHub Actions to automate code deployment on every push to `main`.
+* **Global Low-Latency CDN:** Integrated Amazon CloudFront CDN with automated edge cache invalidation (`/*`) ensuring updates propagate worldwide instantly.
+* **Secure State Management:** Stores Terraform state remotely on HashiCorp Cloud Platform (HCP Terraform) with encrypted token authentication.
 
+---
 
-## 📁 Repo Structure
+## 📁 Repository Structure
 
 ```text
-serverless-resume-cicd/
+serverless-website-cicd/
 ├── .github/
 │   └── workflows/
 │       └── deploy.yml        # GitHub Actions CI/CD workflow configuration
-├── .gitignore                # System and personal file exclusions
-├── index.html                # your resume code here
-└── README.md                 # Project documentation
+├── terraform/                # Terraform configuration files (main, variables, outputs, providers)
+├── asset/                    # Local assets for documentation (excluded from deployment)
+├── .gitignore                # System, environment, and personal file exclusions
+└── index.html                # Static website source code
 
 ```
 
 ---
 
-## STEP BY STEP PROCESS. 
+## 🚀 Step-by-Step Deployment Process
 
 ### Prerequisites
 
-1. An active **AWS Account** with access to S3 and CloudFront.
-2. An **AWS IAM User** with s3 and CDN previledges.
+1. An active **AWS Account** with programmatic access keys.
+2. An active **HCP Terraform Account** with a configured remote workspace and API token.
+
+---
 
 ### Setup Instructions
 
-1. **Fork & Clone the Repository:**
+1. **Clone the Repository:**
 ```bash
-git clone git@github.com:YOUR-USERNAME/serverless-resume-cicd.git
-cd serverless-resume-cicd
+git clone git@github.com:YOUR-USERNAME/serverless-website-cicd.git
+cd serverless-website-cicd
 
 ```
 
 
-2. **Add Personal Profile Image:**
-Add your professional profile headshot to the root directory and name it `profile.jpg` (Note: `profile.jpg` is ignored by `.gitignore` to prevent tracking personal images) you have to remove the profile ignore section and push to a private.
+2. **Add Your Website Files:**
+* Place or edit your `index.html` and any static assets (like CSS, JavaScript, or custom images) directly into the root directory of your cloned repository.
+
 
 3. **Configure GitHub Repository Secrets:**
-Navigate to **Settings > Secrets and variables > Actions** in your GitHub repository and add:
-* `AWS_ACCESS_KEY_ID`: Your IAM user access key
-* `AWS_SECRET_ACCESS_KEY`: Your IAM user secret access key
-* `CLOUDFRONT_DIST_ID`: Your Amazon CloudFront Distribution ID
-* `BUCKET_ADDRESS`: Your bucket Address
+Navigate to **Settings > Secrets and variables > Actions** in your GitHub repository and add the following required secrets:
+* `AWS_ACCESS_KEY_ID`: Your AWS IAM access key.
+* `AWS_SECRET_ACCESS_KEY`: Your AWS IAM secret access key.
+* `TF_API_TOKEN`: Your HCP Terraform user or team API token for remote state management.
 
 
-4. **Update `deploy.yml` Configuration:**
-Modify `.github/workflows/deploy.yml` with your S3 bucket name and preferred AWS region:
-```yaml
-- name: Sync Files to S3 Bucket
-  run: |
-    aws s3 sync . s3://YOUR-S3-BUCKET-NAME --delete --exclude ".git/*" --exclude ".github/*"
-
-```
-
-
-5. **Deploy Changes:**
-Commit and push your changes to trigger the automated CI/CD pipeline:
+4. **Deploy Changes:**
+Commit and push your configuration to the `main` branch to trigger the automated CI/CD pipeline:
 ```bash
 git add .
-git commit -m "feat: setup automated deployment pipeline"
+git status 
+git commit -m "setup automated deployment pipeline"
 git push -u origin main
 
 ```
 
 
+5. **Access Your Website:**
+Your website's CloudFront CDN URL will be outputted in the GitHub Actions terminal upon completion. Any subsequent updates pushed to `main` will automatically update the files in S3 and clear the CloudFront cache within minutes.
 
 ---
 
@@ -96,10 +93,14 @@ git push -u origin main
 *Cloud Infrastructure & DevOps Engineer*
 
 * **Portfolio:** [stephenoni.mytunnel.org](https://www.google.com/search?q=http://stephenoni.mytunnel.org)
-* **LinkedIn:** [stephen-omololu](https://www.google.com/search?q=http://linkedin.com/in/stephen-omololu)
+* **LinkedIn:** [stephen-omololu](https://www.google.com/search?q=https://linkedin.com/in/stephen-omololu)
 
 ---
 
 ## 📄 License
 
 This project is open-source and available under the [MIT License](https://www.google.com/search?q=LICENSE).
+
+```
+
+```
