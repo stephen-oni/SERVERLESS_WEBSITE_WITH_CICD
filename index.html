@@ -2,245 +2,138 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Stephen Oni - Resume</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deployment Successful | CI/CD Pipeline</title>
     <style>
-    * {
-        box-sizing: border-box;
-    }
+        :root {
+            --primary-glow: #00ffcc;
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --text-main: #c9d1d9;
+            --text-muted: #8b949e;
+        }
 
-    body {
-        margin: 0;
-        background: #eef2f7;
-        font: 15px/1.6 "Segoe UI", Arial;
-    }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
 
-    .resume {
-        max-width: 1100px;
-        margin: 20px auto;
-        background: #fff;
-        display: grid;
-        grid-template-columns: 300px 1fr;
-    }
+        .container {
+            background-color: var(--card-bg);
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.1), 0 0 40px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+            border: 1px solid #30363d;
+            animation: fadeIn 1s ease-out forwards;
+        }
 
-    .sidebar {
-        background: #0a2150;
-        color: #fff;
-        padding: 28px;
-    }
+        .icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: pulse 2s infinite;
+        }
 
-    .main {
-        padding: 30px;
-    }
+        h1 {
+            color: #ffffff;
+            margin-top: 0;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
 
-    .photo {
-        text-align: center;
-    }
+        .subtitle {
+            color: var(--primary-glow);
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
 
-    .photo img {
-        width: 140px;
-        height: 140px;
-        border-radius: 50%;
-        border: 4px solid #ff9900;
-        object-fit: cover;
-    }
+        p {
+            line-height: 1.6;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
 
-    h1 {
-        margin: 15px 0 0;
-    }
+        .tech-stack {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
 
-    h2 {
-        color: #ff9900;
-        font-size: 20px;
-        margin: 0 0 20px;
-    }
+        .badge {
+            background: #21262d;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid #30363d;
+            color: var(--text-main);
+        }
 
-    .sec {
-        margin: 24px 0;
-    }
+        .footer {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #30363d;
+            font-size: 0.9rem;
+        }
 
-    .sec h3 {
-        font-size: 14px;
-        text-transform: uppercase;
-        border-bottom: 2px solid rgba(255, 255, 255, 0.3);
-        padding-bottom: 6px;
-    }
+        .footer a {
+            color: var(--primary-glow);
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
 
-    .main .sec h3 {
-        border-color: #ff9900;
-        color: #222;
-    }
+        .footer a:hover {
+            opacity: 0.7;
+            text-decoration: underline;
+        }
 
-    .tag {
-        display: inline-block;
-        background: #1f4287;
-        color: #ffffff;
-        padding: 5px 9px;
-        border-radius: 15px;
-        margin: 3px;
-        font-size: 12px;
-    }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-    .job {
-        margin-bottom: 28px;
-    }
-
-    .role {
-        font-weight: 700;
-        font-size: 16px;
-    }
-
-    .sub {
-        color: #777;
-        font-size: 13px;
-        margin-bottom: 8px;
-    }
-
-    ul {
-        margin-top: 5px;
-        padding-left: 20px;
-    }
-
-    ul li {
-        margin-bottom: 5px;
-    }
-
-    .github {
-        display: inline-block;
-        background: #ff9900;
-        color: #fff;
-        text-decoration: none;
-        padding: 8px 14px;
-        border-radius: 5px;
-        font-weight: 600;
-        margin-top: 10px;
-        font-size: 13px;
-    }
-
-    .project-card {
-        margin-bottom: 20px;
-        padding-bottom: 15px;
-        border-bottom: 1px solid #eee;
-    }
-
-    .project-card:last-child {
-        border-bottom: none;
-    }
-</style>
+        @keyframes pulse {
+            0% { text-shadow: 0 0 10px rgba(0,255,204,0.5); }
+            50% { text-shadow: 0 0 25px rgba(0,255,204,1); }
+            100% { text-shadow: 0 0 10px rgba(0,255,204,0.5); }
+        }
+    </style>
 </head>
 <body>
-    <div class="resume">
-        <div class="sidebar">
-            <div class="photo"><img src="profile.jpg" alt="Stephen Omololu Oni"></div>  
-            <h1>Stephen Oni</h1>
-            <h2>Cloud & DevOps Engineer</h2>
-            
-            <p><b>Email</b><br>stephen.oni.67@gmail.com</p>
-            <p><b>GitHub</b><br>github.com/stephen-oni</p>
-            <p><b>LinkedIn</b><br>linkedin.com/in/stephen-omololu</p>
 
-            <div class="sec">
-                <h3>Profile</h3>
-                <p>Cloud & DevOps Engineer with experience in designing, deploying, and automating secure infrastructure using Infrastructure as Code, Linux, Python automation, Docker, and Kubernetes. Passionate about tackling complex systems engineering and building scalable, fault-tolerant cloud solutions.</p>
-            </div>
+    <div class="container">
+        <div class="icon">🚀</div>
+        <h1>Deployment Successful</h1>
+        <div class="subtitle">Serverless Infrastructure Active</div>
+        
+        <p>This static environment has been automatically provisioned using Infrastructure as Code and successfully deployed to the AWS global edge network.</p>
 
-            <div class="sec">
-                <h3>Technical Skills</h3>
-                <div class="tag">AWS (EC2, RDS, VPC)</div>
-                <div class="tag">Terraform</div>
-                <div class="tag">CloudFormation</div>
-                <div class="tag">Docker</div>
-                <div class="tag">Kubernetes</div>
-                <div class="tag">Linux</div>
-                <div class="tag">Python (Automation)</div>
-                <div class="tag">C</div>
-                <div class="tag">Bash Scripting</div>
-                <div class="tag">Git & GitHub Actions</div>
-                <div class="tag">System Monitoring</div>
-                <div class="tag">TCP/IP & Networking</div>
-            </div>
-
-            <div class="sec">
-                <h3>Soft Skills</h3>
-                <div class="tag">Problem Solving</div>
-                <div class="tag">Analytical Thinking</div>
-                <div class="tag">Troubleshooting</div>
-                <div class="tag">Adaptability</div>
-                <div class="tag">Team Collaboration</div>
-                <div class="tag">Technical Communication</div>
-                <div class="tag">Critical Thinking</div>
-                <div class="tag">Time Management</div>
-                <div class="tag">Continuous Learning</div>
-            </div>
-
-            <div class="sec">
-                <h3>Certifications</h3>
-                <ul>
-                    <li>AWS Solutions Architect Associate (In Progress)</li>
-                    <li>ISC2 Certified in Cybersecurity (CC) (In Progress)</li>
-                </ul>
-            </div>
-            
-            <div class="sec">
-                <h3>Education</h3>
-                <p><b>University of Ilorin</b><br>B.Eng. Electrical & Electronics Engineering<br><i>300-Level</i></p>
-            </div>
+        <div class="tech-stack">
+            <span class="badge">AWS S3 & CloudFront</span>
+            <span class="badge">HCP Terraform</span>
+            <span class="badge">GitHub Actions</span>
         </div>
 
-        <div class="main">
-            <div class="sec">
-                <h3>Professional & Project Experience</h3>
-
-                <div class="job">
-                    <div class="role">Cloud & DevOps Engineer (Freelance)</div>
-                    <ul>
-                        <li>Orchestrated containerized application deployments utilizing Docker and Kubernetes, standardizing infrastructure across staging and production environments.</li>
-                        <li>Implemented infrastructure as code (IaC) using Terraform and AWS CloudFormation to automate the provisioning of scalable, multi-tier cloud architectures.</li>
-                        <li>Engineered automated CI/CD pipelines integrating Git version control to accelerate deployment workflows and eliminate configuration drift.</li>
-                        <li>Developed custom system automation and log analysis scripts leveraging Python and C to monitor infrastructure health and streamline resource management.</li>
-                        <li>Configured robust Linux server environments and enforced strict network security protocols utilizing AWS VPCs, Security Groups, and least-privilege IAM roles.</li>
-                    </ul>
-                </div>
-
-                <div class="job">
-                    <div class="role">Cloud Infrastructure Architect (Applied Projects)</div>
-                    <ul>
-                        <li>Architected a high-availability, fault-tolerant infrastructure utilizing Auto Scaling Groups (ASG) and Elastic Load Balancing (ELB) to distribute traffic across EC2 instances.</li>
-                        <li>Managed containerized workloads and isolated state systems by provisioning Multi-AZ Amazon RDS databases within secure private subnets.</li>
-                        <li>Designed a completely stateless, production-ready web architecture leveraging Amazon S3 and AWS CloudFront for global low-latency content delivery via HTTPS.</li>
-                        <li>Authored declarative IaC templates to orchestrate event-driven, serverless microservices with AWS Lambda and API Gateway.</li>
-                        <li>Automated routine Linux OS administration and deployment execution using Bash/Shell scripting to reduce manual server overhead.</li>
-                    </ul>
-                </div>
-
-                <div class="job">
-                    <div class="role">Network & Systems Engineering Trainee (SkillsBuild)</div>
-                    <ul>
-                        <li>Deployed and managed Linux-based virtual machine environments (Ubuntu via VirtualBox) for isolated system administration and penetration testing.</li>
-                        <li>Analyzed and configured core networking protocols including TCP/IP, DNS, and custom routing tables to optimize internal network communications.</li>
-                        <li>Participated in rigorous cloud computing and infrastructure labs to align academic engineering principles with real-world enterprise DevOps standards.</li>
-                        <li>Assisted in the evaluation of system architectures, focusing on hardware-software integration, circuit analysis, and automated fault resolution.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="sec">
-                <h3>Featured Cloud Projects</h3>
-                
-                <div class="project-card">
-                    <div class="role">High-Availability Multi-Tier Infrastructure (VPC-EC2-ASG-RDS)</div>
-                    <div class="sub">Shell • VPC • EC2 • ASG • RDS</div>
-                    <p>Configured a fault-tolerant network topology utilizing public and private subnets across distinct Availability Zones. Deployed an Auto Scaling Group (ASG) coupled with an Elastic Load Balancer to distribute traffic across EC2 instances.</p>
-                </div>
-
-                <div class="project-card">
-                    <div class="role">Stateless AWS Cloud Resume Infrastructure (s3-simple-version)</div>
-                    <div class="sub">Python • AWS S3 • CloudFront</div>
-                    <p>Designed a completely stateless web architecture leveraging Amazon S3 for cost-effective hosting, integrated with CloudFront to serve assets securely via HTTPS protocol globally.</p>
-                    <a class="github" href="https://github.com/stephen-oni/s3-simple-version" target="_blank">View Repository</a>
-                </div>
-            </div>
+        <div class="footer">
+            <strong>Stephen Omololu Oni</strong><br>
+            <span style="color: var(--text-muted); font-size: 0.85rem;">Cloud Infrastructure | Automation with Python & C</span><br>
+            <a href="http://stephenoni.mytunnel.org" target="_blank">View Portfolio</a>
         </div>
     </div>
+
 </body>
 </html>
