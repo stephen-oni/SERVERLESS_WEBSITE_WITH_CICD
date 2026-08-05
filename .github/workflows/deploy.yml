@@ -51,7 +51,7 @@ jobs:
       # Uploads the application files to the S3 bucket using native shell variables 
       - name: Sync HTML and Assets to S3
         run: |
-          aws s3 sync ./ s3://$BUCKET_NAME --exclude ".git/*" --exclude "terraform/*" --exclude ".github/*" --exclude "asset/*"
+          aws s3 sync ./ s3://$BUCKET_NAME --exclude ".git/*" --exclude "terraform/*" --exclude ".github/*" --exclude "asset/*" --exclude ".gitignore" --exclude "LICENSE" --exclude "README.md"
       # Invalidates the CloudFront cache to deploy the latest HTML/CSS updates
       - name: Invalidate CloudFront Cache
         run: aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_ID --paths "/*"
