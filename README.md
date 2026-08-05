@@ -1,4 +1,4 @@
-# Serverless Static Website CI/CD Pipeline
+# Serverless Static Website with CI/CD Pipeline
 
 [![AWS S3](https://img.shields.io/badge/AWS-S3-orange?logo=amazons3&logoColor=white)](https://aws.amazon.com/s3/)
 [![AWS CloudFront](https://img.shields.io/badge/AWS-CloudFront-blue?logo=amazon-aws&logoColor=white)](https://aws.amazon.com/cloudfront/)
@@ -52,8 +52,8 @@ serverless-website-cicd/
 
 1. **Clone the Repository:**
 ```bash
-git clone git@github.com:YOUR-USERNAME/serverless-website-cicd.git
-cd serverless-website-cicd
+git clone https://github.com/stephen-oni/SERVERLESS_WEBSITE_WITH_CICD.git
+cd SERVERLESS_WEBSITE_WITH_CICD
 
 ```
 
@@ -74,14 +74,13 @@ Commit and push your configuration to the `main` branch to trigger the automated
 ```bash
 git add .
 git status 
-git commit -m "setup automated deployment pipeline"
+git commit -m "my website"
 git push -u origin main
 
 ```
 
-
 5. **Access Your Website:**
-Your website's CloudFront CDN URL will be outputted in the GitHub Actions terminal upon completion. Any subsequent updates pushed to `main` will automatically update the files in S3 and clear the CloudFront cache within minutes.
+   Your CloudFront CDN URL is saved as a Terraform output and can be viewed directly in your HCP Terraform workspace or your AWS CloudFront Console. Any subsequent updates pushed to `main` will automatically update the files in S3 and clear the CloudFront cache within minutes.
 
 ---
 
