@@ -5,7 +5,7 @@
 [![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-CI%2FCD-2088FF?logo=githubactions&logoColor=white)](https://github.com/features/actions)
 [![Infrastructure as Code](https://img.shields.io/badge/IaC-Automation-green)](https://www.terraform.io/)
 
-A production-ready, fully automated serverless hosting platform built using **Infrastructure as Code (IaC)** with HCP Terraform and a continuous deployment pipeline via **GitHub Actions**. Static websites are hosted securely on **Amazon S3** and delivered globally via **Amazon CloudFront** using Origin Access Control (OAC).
+A fully automated serverless hosting platform built using **Infrastructure as Code (IaC)** with HCP Terraform and a continuous deployment pipeline via **GitHub Actions**. Static websites are hosted securely on **Amazon S3** and delivered globally via **Amazon CloudFront** using Origin Access Control (OAC). you can apply DNS to your CDN manually. 
 
 ---
 
@@ -83,6 +83,12 @@ git push -u origin main
    Your CloudFront CDN URL is saved as a Terraform output and can be viewed directly in your `HCP Terraform workspace` or your `AWS CloudFront Console`. Any subsequent updates pushed to `main` will automatically update the files in S3 and clear the CloudFront cache within minutes.
 
 ---
+
+5. **Upcoming Feature (DNS Automation):**
+   An update on the automatic deployment of DNS to the CDN will be added soon.
+   
+---
+
 
 ## 👤 Author
 
