@@ -58,9 +58,9 @@ cd SERVERLESS_WEBSITE_WITH_CICD
 ```
 
 
-2. **Add Your Website Files:**
+2. **Add Your Website Files & Configure Variables:**
 * Place or edit your `index.html` and any static assets (like CSS, JavaScript, or custom images) directly into the root directory of your cloned repository.
-
+* Go to your HCP Terraform workspace **Variables** settings and add your unique S3 bucket name as a Terraform variable (`bucket_name`), or define a default value inside your terraform/`variables.tf` file.
 
 3. **Configure GitHub Repository Secrets:**
 Navigate to **Settings > Secrets and variables > Actions** in your GitHub repository and add the following required secrets:
@@ -74,13 +74,13 @@ Commit and push your configuration to the `main` branch to trigger the automated
 ```bash
 git add .
 git status 
-git commit -m "my website"
+git commit -m "initial commit"
 git push -u origin main
 
 ```
 
 5. **Access Your Website:**
-   Your CloudFront CDN URL is saved as a Terraform output and can be viewed directly in your HCP Terraform workspace or your AWS CloudFront Console. Any subsequent updates pushed to `main` will automatically update the files in S3 and clear the CloudFront cache within minutes.
+   Your CloudFront CDN URL is saved as a Terraform output and can be viewed directly in your `HCP Terraform workspace` or your `AWS CloudFront Console`. Any subsequent updates pushed to `main` will automatically update the files in S3 and clear the CloudFront cache within minutes.
 
 ---
 
