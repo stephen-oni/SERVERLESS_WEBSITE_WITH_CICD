@@ -88,7 +88,7 @@ git push -u origin main
 
 **Stephen Oni**
 
-*Cloud Infrastructure & DevOps Engineer*
+*Cloud & DevOps Engineer*
 
 * **Portfolio:** [stephenoni.mytunnel.org](https://www.google.com/search?q=http://stephenoni.mytunnel.org)
 * **LinkedIn:** [stephen-omololu](https://www.google.com/search?q=https://linkedin.com/in/stephen-omololu)
