@@ -80,12 +80,18 @@ git push -u origin main
 ```
 
 5. **Access Your Website:**
-   Your CloudFront CDN URL is saved as a Terraform output and can be viewed directly in your `HCP Terraform workspace` or your `AWS CloudFront Console`. Any subsequent updates pushed to `main` will automatically update the files in S3 and clear the CloudFront cache within minutes.
+   Your CloudFront CDN URL is saved as a Terraform output and can be viewed directly in your HCP Terraform workspace or your AWS CloudFront Console. Any subsequent updates pushed to `main` will automatically update the files in S3 and clear the CloudFront cache within minutes.
+
+6. **Resource Cleanup (Teardown):**
+   To completely remove the deployed infrastructure from AWS and prevent configuration drift, you must delete the resources in this specific order via the AWS Console:
+   * **S3 Bucket:** Empty all uploaded files and objects inside the bucket first, then delete the bucket itself.
+   * **CloudFront CDN:** Select your distribution, click **Disable**, wait several minutes for the disabled state to deploy globally, and then click **Delete**.
+   * **CDN Security (OAC):** Navigate to **Security > Origin access** in the CloudFront console menu and delete the Origin Access Control linked to your deployment.
 
 ---
 
-5. **Upcoming Feature (DNS Automation):**
-   An update on the automatic deployment of DNS to the CDN will be added soon.
+7. **Upcoming Feature:**
+   An update on the automatic deployment of DNS to the CDN and folder for webpages will be added soon.
 
 ---
 
