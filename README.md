@@ -86,7 +86,7 @@ git push -u origin main
 
 5. **Upcoming Feature (DNS Automation):**
    An update on the automatic deployment of DNS to the CDN will be added soon.
-   
+
 ---
 
 
@@ -103,4 +103,4 @@ git push -u origin main
 
 ## 📄 License
 
-This project is open-source and available under the [MIT License](https://www.google.com/search?q=LICENSE)..
+This project is open-source and available under the [MIT License](https://www.google.com/search?q=LICENSE).
