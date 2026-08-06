@@ -35,7 +35,7 @@ jobs:
         working-directory: ./terraform
         run: terraform init
 
-      # Applies the infrastructure changes automatically without manual approval
+      # Applies the infrastructfure changes automatically without manual approval
       - name: Terraform Apply
         working-directory: ./terraform
         run: terraform apply -auto-approve
@@ -49,7 +49,7 @@ jobs:
           echo "CLOUDFRONT_ID=$(terraform output -raw cloudfront_distribution_id)" >> $GITHUB_ENV
 
       # Uploads the application files to the S3 bucket using native shell variables 
-      - name: Sync HTML and Assets to S3
+      - name: Sync file to S3
         run: |
           aws s3 sync ./ s3://$BUCKET_NAME --exclude ".git/*" --exclude "terraform/*" --exclude ".github/*" --exclude "asset/*" --exclude ".gitignore" --exclude "LICENSE" --exclude "README.md"
       # Invalidates the CloudFront cache to deploy the latest HTML/CSS updates
